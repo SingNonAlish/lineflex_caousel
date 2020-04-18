@@ -1,0 +1,68 @@
+      var result = {
+        "fulfillmentMessages": [
+              {
+                  "platform": "line",
+                  "type": 4,
+                  "payload" : {
+                    "line":  {
+                      "type": "flex",
+                      "altText": "บทเรียนออนไลน์",
+                      "contents": {
+                        "type": "bubble",
+                        "hero": {
+                          "type": "image",
+                          "url": "https://i.ytimg.com/vi/0eAzk6xveZc/maxresdefault.jpg",
+                          "size": "full",
+                          "aspectRatio": "16:9",
+                          "aspectMode": "cover"
+                        },
+                        "body": {
+                          "type": "box",
+                          "layout": "vertical",
+                          "spacing": "sm",
+                          "contents": [
+                            {
+                              "type": "text",
+                              "text": "แก้ปัญหาเข้า Class Room ไม่ได้",
+                              "weight": "bold",
+                              "wrap": true
+                            },
+                            {
+                              "type": "box",
+                              "layout": "baseline",
+                              "contents": [
+                                {
+                                  "type": "text",
+                                  "text": "วิชา สารสนเทศเพื่อการเรียนรู้",
+                                  "flex": 0,
+                                  "size": "md",
+                                  "weight": "regular",
+                                  "wrap": true
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        "footer": {
+                          "type": "box",
+                          "layout": "vertical",
+                          "spacing": "sm",
+                          "contents": [
+                            {
+                              "type": "button",
+                              "action": {
+                                "type": "uri",
+                                "label": "เข้าดูบทเรียน",
+                                "uri": "https://youtu.be/ycDPmJhzy7c"
+                              },
+                              "style": "primary"
+                            }
+                          ]
+                        }
+                      }                 
+                    }            
+                  }
+              }]
+      }
+      var replyJSON = ContentService.createTextOutput(JSON.stringify(result)).setMimeType(ContentService.MimeType.JSON);
+      return replyJSON;  
